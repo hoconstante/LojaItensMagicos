@@ -28,6 +28,7 @@ namespace LojaItens
                 else if ( selec == 2 && loja.VerificarEstoque() == true)
                 {
                     voce.Comprar();
+                    
                 }
                 else if ( selec == 3)
                 {

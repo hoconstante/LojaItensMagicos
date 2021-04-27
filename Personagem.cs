@@ -9,6 +9,7 @@ namespace LojaItens
         public string nomedocara;
         public Int32 Dinheiro;
         public Dictionary<string, Item> Inventario = new Dictionary<string, Item>();
+        
 
         public Personagem()
         {
@@ -118,7 +119,7 @@ namespace LojaItens
                             {
                                 Dinheiro = Dinheiro - Foice.Custo;
                                 Inventario.Add(Foice.Nome, Foice);
-                                varinha.Montante = Foice.Montante - 1;
+                                Foice.Montante = Foice.Montante - 1;
                                 Console.WriteLine("Comerciante: Negócio fechado!");
                             }
                             else
@@ -139,7 +140,7 @@ namespace LojaItens
                 }
                 else if (nomeItem == Arco.Nome)
                 {
-                    if (Foice.Montante > 0)
+                    if (Arco.Montante > 0)
                     {
                         if (Dinheiro >= Arco.Custo)
                         {
@@ -152,7 +153,7 @@ namespace LojaItens
                             {
                                 Dinheiro = Dinheiro - Arco.Custo;
                                 Inventario.Add(Arco.Nome, Arco);
-                                varinha.Montante = Arco.Montante - 1;
+                                Arco.Montante = Arco.Montante - 1;
                                 Console.WriteLine("Comerciante: Negócio fechado!");
                             }
                             else
@@ -186,7 +187,7 @@ namespace LojaItens
                             {
                                 Dinheiro = Dinheiro - Espada.Custo;
                                 Inventario.Add(Espada.Nome, Espada);
-                                varinha.Montante = Espada.Montante - 1;
+                                Espada.Montante = Espada.Montante - 1;
                                 Console.WriteLine("Comerciante: Negócio fechado!");
                             }
                             else
@@ -220,7 +221,7 @@ namespace LojaItens
                             {
                                 Dinheiro = Dinheiro - Flauta.Custo;
                                 Inventario.Add(Flauta.Nome, Flauta);
-                                varinha.Montante = Flauta.Montante - 1;
+                                Flauta.Montante = Flauta.Montante - 1;
                                 Console.WriteLine("Comerciante: Negócio fechado!");
                             }
                             else
