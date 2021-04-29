@@ -9,6 +9,7 @@ namespace LojaItens
             Personagem voce = new Personagem();
             Loja loja = new Loja();
             loja.addCatalogo();
+            voce.addEstoque();
             int selec;
             do
             {
@@ -39,7 +40,7 @@ namespace LojaItens
             while (selec != 0);
             Console.WriteLine("Comerciante: Então vá na sombra, "+voce.nomedocara+".");
             Console.WriteLine("[pressione qualquer botão para sair da loja]");
-            Console.ReadKey();
+            Console.ReadKey();            
         }
     }
 }
