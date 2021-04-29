@@ -13,11 +13,7 @@ namespace LojaItens
             do
             {
                 Console.WriteLine("Comerciante: O que desejas, "+ voce.nomedocara+"?");
-                Console.WriteLine("Você: Eu vim para...");
-                Console.WriteLine(" [1] ver o catálogo");
-                Console.WriteLine(" [2] Comprar um Item. ");
-                Console.WriteLine(" [3] Ver meu inventário. ");
-                Console.WriteLine(" [0] Eh... Na verdade, não tenho nada a fazer aqui.");
+                Console.WriteLine("Você: Eu vim para... \n [1] ver o catálogo \n [2] Comprar um Item. \n [3] Ver meu inventário. \n [0] Eh... Na verdade, não tenho nada a fazer aqui. ");
                 selec = Convert.ToInt32(Console.ReadLine()); 
                 Console.Clear();
 
@@ -25,7 +21,7 @@ namespace LojaItens
                 {                    
                     loja.ApresentarCatalogo();
                 }
-                else if ( selec == 2 && loja.VerificarEstoque() == true)
+                else if ( selec == 2 )
                 {
                     voce.Comprar();
                     

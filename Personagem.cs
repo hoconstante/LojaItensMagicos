@@ -31,35 +31,35 @@ namespace LojaItens
             varinha.Custo = 1200;
             varinha.Tipo = "feiticeiro";
             varinha.Descricao = "um poderoso cajado com uma pedra de gelo inderretível que dá dano adicional de frio às suas magias";
-            varinha.Montante = 2;
+            varinha.Montante = 3;
 
             Item Foice = new Item();
             Foice.Nome = "sussurro das sombras";
             Foice.Custo = 2500;
             Foice.Tipo = "assassino";
             Foice.Descricao = "uma foice que divide seu dano entre físico e sombrio e aumenta sua furtividade";
-            Foice.Montante = 2;
+            Foice.Montante = 3;
 
             Item Arco = new Item();
             Arco.Nome = "Furacão de Runnaan";
             Arco.Custo = 1300;
             Arco.Tipo = "Arqueiro";
             Arco.Descricao = "um arco que atira duas flechas de energia adicionais sem custo de munição a cada disparo";
-            Arco.Montante = 2;
+            Arco.Montante = 3;
 
             Item Espada = new Item();
             Espada.Nome = "Lâmina do perseguidor";
             Espada.Custo = 2000;
             Espada.Tipo = "guerreiro";
             Espada.Descricao = "uma grande espada que acumila velocidade de movimento conforme o portador se locomove. Ao desferir um golpe, os acúmulos são transformados em dano adicional e zeram";
-            Espada.Montante = 2;
+            Espada.Montante = 3;
 
             Item Flauta = new Item();
             Flauta.Nome = "Canto dos Esquecidos";
             Flauta.Custo = 900;
             Flauta.Tipo = "Bardo";
             Flauta.Descricao = "uma flauta que dá ao portador a habilidade de conjurar o Canto dos Esquecidos, que dobra todos os atributos de até 5 pessoas por um curto período de tempo";
-            Flauta.Montante = 2;
+            Flauta.Montante = 3;
 
             int quero = 1;
             if (quero > 0)
@@ -84,9 +84,24 @@ namespace LojaItens
                             {
 
                                 Dinheiro = Dinheiro - varinha.Custo;
-                                Inventario.Add(varinha.Nome, varinha);
+                                
                                 varinha.Montante = varinha.Montante - 1;
                                 Console.WriteLine("Comerciante: Negócio fechado!");
+                                if (Inventario.ContainsKey(varinha.Nome))
+                                {
+                                    foreach (KeyValuePair<string, Item> quantia in Inventario)
+                                    {
+                                        if (quantia.Value.Nome == varinha.Nome)
+                                        {
+                                            varinha.Guardado = varinha.Guardado + 1;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    Inventario.Add(varinha.Nome, varinha);
+                                    varinha.Guardado = 1;
+                                }
                             }
                             else
                             {
@@ -117,10 +132,24 @@ namespace LojaItens
                             certeza = Convert.ToInt32(Console.ReadLine());
                             if (certeza == 1)
                             {
-                                Dinheiro = Dinheiro - Foice.Custo;
-                                Inventario.Add(Foice.Nome, Foice);
+                                Dinheiro = Dinheiro - Foice.Custo;                                
                                 Foice.Montante = Foice.Montante - 1;
                                 Console.WriteLine("Comerciante: Negócio fechado!");
+                                if (Inventario.ContainsKey(Foice.Nome))
+                                {
+                                    foreach (KeyValuePair<string, Item> quantia in Inventario)
+                                    {
+                                        if (quantia.Value.Nome == Foice.Nome)
+                                        {
+                                            Foice.Guardado = Foice.Guardado + 1;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    Inventario.Add(Foice.Nome, Foice);
+                                    Foice.Guardado = 1;
+                                }
                             }
                             else
                             {
@@ -151,10 +180,24 @@ namespace LojaItens
                             certeza = Convert.ToInt32(Console.ReadLine());
                             if (certeza == 1)
                             {
-                                Dinheiro = Dinheiro - Arco.Custo;
-                                Inventario.Add(Arco.Nome, Arco);
+                                Dinheiro = Dinheiro - Arco.Custo;                               
                                 Arco.Montante = Arco.Montante - 1;
                                 Console.WriteLine("Comerciante: Negócio fechado!");
+                                if (Inventario.ContainsKey(Arco.Nome))
+                                {
+                                    foreach (KeyValuePair<string, Item> quantia in Inventario)
+                                    {
+                                        if (quantia.Value.Nome == Arco.Nome)
+                                        {
+                                            Arco.Guardado = Arco.Guardado + 1;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    Inventario.Add(Arco.Nome, Arco);
+                                    Arco.Guardado = 1;
+                                }
                             }
                             else
                             {
@@ -185,10 +228,24 @@ namespace LojaItens
                             certeza = Convert.ToInt32(Console.ReadLine());
                             if (certeza == 1)
                             {
-                                Dinheiro = Dinheiro - Espada.Custo;
-                                Inventario.Add(Espada.Nome, Espada);
+                                Dinheiro = Dinheiro - Espada.Custo;                                
                                 Espada.Montante = Espada.Montante - 1;
                                 Console.WriteLine("Comerciante: Negócio fechado!");
+                                if (Inventario.ContainsKey(Espada.Nome))
+                                {
+                                    foreach (KeyValuePair<string, Item> quantia in Inventario)
+                                    {
+                                        if (quantia.Value.Nome == Espada.Nome)
+                                        {
+                                            Espada.Guardado = Espada.Guardado + 1;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    Inventario.Add(Espada.Nome, Espada);
+                                    Espada.Guardado = 1;
+                                }
                             }
                             else
                             {
@@ -219,10 +276,24 @@ namespace LojaItens
                             certeza = Convert.ToInt32(Console.ReadLine());
                             if (certeza == 1)
                             {
-                                Dinheiro = Dinheiro - Flauta.Custo;
-                                Inventario.Add(Flauta.Nome, Flauta);
+                                Dinheiro = Dinheiro - Flauta.Custo;                               
                                 Flauta.Montante = Flauta.Montante - 1;
                                 Console.WriteLine("Comerciante: Negócio fechado!");
+                                if (Inventario.ContainsKey(Flauta.Nome))
+                                {
+                                    foreach (KeyValuePair<string, Item> quantia in Inventario)
+                                    {
+                                        if (quantia.Value.Nome == Flauta.Nome)
+                                        {
+                                            Flauta.Guardado = Flauta.Guardado + 1;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    Inventario.Add(Flauta.Nome, Flauta);
+                                    Flauta.Guardado = 1;
+                                }
                             }
                             else
                             {

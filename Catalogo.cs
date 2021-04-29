@@ -50,30 +50,10 @@ namespace LojaItens
             Flauta.Montante = 2;
             Catalogo.Add(Flauta.Nome, Flauta);
         }
-        public bool VerificarEstoque()
-        {
-            bool estoque = false;
-            if (Catalogo.Count == 0)
-            {
-                estoque = false;
-            }
-            else if (Catalogo.Count > 0)
-            {
-                estoque = true;
-
-            }
-            return estoque;
-
-        }
+        
         public void ApresentarCatalogo()
         {
-            Console.Clear();
-            if (VerificarEstoque() == false)
-            {
-                Console.WriteLine("Comerciante: Acabou,... Você comprou TUDO. Volte mais tarde");
-            }
-            else if (VerificarEstoque() == true)
-            {
+                Console.Clear();
                 Console.WriteLine("Comerciante: Eis o que tenho aqui...");
                 foreach (KeyValuePair<string, Item> Item in Catalogo)
                 {

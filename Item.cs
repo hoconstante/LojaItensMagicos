@@ -11,6 +11,7 @@ namespace LojaItens
         public string Tipo;
         public string Descricao;
         public int Montante;
+        public int Guardado;
 
         
         
